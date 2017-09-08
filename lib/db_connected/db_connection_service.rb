@@ -15,7 +15,7 @@ class DbConnectionService
   def try_establish_connection
     established = false
     while !established
-      @logger.warn "LOST CONNECTION TO DB - trying to establish connection in #{@establish_retry_wait_seconds} seconds"
+      warn "LOST CONNECTION TO DB - trying to establish connection in #{@establish_retry_wait_seconds} seconds"
       pause @establish_retry_wait_seconds
       established = establish_connection
     end
@@ -41,4 +41,15 @@ class DbConnectionService
   end
   private :pause
 
+  def warn message
+    puts "OI"
+    if @logger.respond_to?(:warn)
+      @logger.warn message
+    elsif @logger.respond_to?(:puts)
+      @logger.puts message
+    else
+      puts message
+    end
+  end
+  private :warn
 end
