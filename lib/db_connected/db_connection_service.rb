@@ -42,7 +42,6 @@ class DbConnectionService
   private :pause
 
   def warn message
-    puts "OI"
     if @logger.respond_to?(:warn)
       @logger.warn message
     elsif @logger.respond_to?(:puts)

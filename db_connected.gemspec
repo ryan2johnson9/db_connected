@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
 #  spec.add_runtime_dependency "activemodel",
 #                              ["~> 3.2"]
 #spec.add_runtime_dependency 'rails', '~> 3.2', '>= 3.2.11'
-  spec.add_runtime_dependency 'activemodel', '>= 3', '< 5.0'
+  spec.add_runtime_dependency 'activemodel', '>= 3'
   # spec.add_runtime_dependency 'phonelib'
   # spec.add_development_dependency "typhoeus"
   spec.add_development_dependency "pry"
